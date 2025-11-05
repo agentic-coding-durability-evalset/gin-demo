@@ -1,4 +1,4 @@
-# 新需求
+# 新需求 1
 
 为Gin应用添加JWT Auth Middleware支持，算法为HS256，secret为`your-256-bit-secret`。要求如下：
 
@@ -7,7 +7,7 @@
 - 增加基于username和password获取jwt的功能，生成的JWT token的payload的sub为username，过期时间为30天
 - JWT token来自于请求头的`Authorization`字段，格式为`Bearer <token>`，同时也支持x-api-key查询字段传递JWT Token
 
-# 新需求
+# 新需求 2
 
 请为项目增加SQLite数据支持，具体需求如下：
 

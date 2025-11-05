@@ -1,4 +1,4 @@
-# New Requirement
+# New Requirement 1
 
 Add JWT Auth Middleware support for the Gin application with HS256 algorithm and secret `your-256-bit-secret`. Requirements:
 
@@ -7,7 +7,7 @@ Add JWT Auth Middleware support for the Gin application with HS256 algorithm and
 - Add functionality to obtain JWT based on username and password. The generated JWT token's payload sub should be username, with an expiration time of 30 days
 - JWT token comes from the `Authorization` header field in the format `Bearer <token>`, and also supports passing JWT Token through the x-api-key query parameter
 
-# New Requirement
+# New Requirement 2
 
 Please add SQLite database support for the project. Specific requirements:
 
