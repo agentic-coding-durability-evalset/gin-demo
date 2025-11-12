@@ -34,10 +34,6 @@ gin-demo/
 ### 安装和运行
 
 ```bash
-# 克隆项目
-git clone <repository-url>
-cd gin-demo
-
 # 安装依赖
 go mod download
 
