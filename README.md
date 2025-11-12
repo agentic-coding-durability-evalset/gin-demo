@@ -1,100 +1,100 @@
 # Gin Demo
 
-一个基于 [Gin](https://gin-gonic.com/) 框架的 Go Web 应用示例项目。Gin 是一个用 Go 编写的 HTTP Web 框架，具有类似 Martini 的 API，但性能更好。
+A Go Web application demo project based on the [Gin](https://gin-gonic.com/) framework. Gin is an HTTP Web framework written in Go with a Martini-like API but with better performance.
 
-## 技术栈
+## Tech Stack
 
 - **Go**: 1.25.3
 - **Gin**: 1.11.0
 
-## 项目结构
+## Project Structure
 
 ```
 gin-demo/
-├── main.go              # 应用入口，路由和处理器定义
-├── go.mod               # Go 模块依赖
-├── go.sum               # 依赖校验和
-├── index.http           # HTTP 请求测试文件
+├── main.go              # Application entry point, route and handler definitions
+├── go.mod               # Go module dependencies
+├── go.sum               # Dependency checksums
+├── index.http           # HTTP request test file
 └── README.md
 ```
 
-## 功能特性
+## Features
 
-- 基础路由处理
-- JSON 响应
-- 中间件支持（日志和恢复）
-- 简洁的 API 设计
+- Basic route handling
+- JSON responses
+- Middleware support (logging and recovery)
+- Clean API design
 
-## 快速开始
+## Quick Start
 
-### 前置要求
+### Prerequisites
 
-- Go 1.25.3 或更高版本
+- Go 1.25.3 or higher
 
-### 安装和运行
+### Installation and Running
 
 ```bash
-# 安装依赖
+# Install dependencies
 go mod download
 
-# 运行项目
+# Run project
 go run main.go
 ```
 
-服务将在 `http://localhost:8080` 启动（Gin 默认端口）。
+The service will start at `http://localhost:8080` (Gin default port).
 
-### 构建可执行文件
+### Build Executable
 
 ```bash
-# 构建
+# Build
 go build -o gin-demo
 
-# 运行
+# Run
 ./gin-demo
 ```
 
-## API 端点
+## API Endpoints
 
-### Ping 端点
+### Ping Endpoint
 ```http
 GET http://localhost:8080/ping
 ```
-响应示例:
+Response example:
 ```json
 {
   "message": "pong"
 }
 ```
 
-## 代码说明
+## Code Description
 
-### 主应用 (`main.go`)
+### Main Application (`main.go`)
 
-应用配置了以下内容：
-- **默认中间件**: Gin 默认包含日志和恢复中间件
-- **路由定义**: `/ping` 端点返回 JSON 响应
-- **服务器启动**: 监听 `0.0.0.0:8080`
+The application is configured with:
+- **Default middleware**: Gin includes logging and recovery middleware by default
+- **Route definition**: `/ping` endpoint returns JSON response
+- **Server startup**: Listens on `0.0.0.0:8080`
 
-### Gin 特性
+### Gin Features
 
-- **快速**: 基于 httprouter，性能优异
-- **中间件支持**: 丰富的中间件生态系统
-- **JSON 绑定**: 自动 JSON 序列化/反序列化
-- **路由组**: 支持路由分组和嵌套
-- **参数绑定**: 支持 URL 参数、查询参数、表单数据等
+- **Fast**: Based on httprouter with excellent performance
+- **Middleware support**: Rich middleware ecosystem
+- **JSON binding**: Automatic JSON serialization/deserialization
+- **Route groups**: Support for route grouping and nesting
+- **Parameter binding**: Support for URL parameters, query parameters, form data, etc.
 
-## 使用示例
+## Usage Examples
 
-### 使用 curl 测试
+### Test with curl
 
 ```bash
-# 测试 ping 端点
+# Test ping endpoint
 curl http://localhost:8080/ping
 ```
 
-### 扩展示例
+### Extension Examples
 
-可以轻松添加更多路由：
+You can easily add more routes:
 
 ```go
 r.GET("/users", func(c *gin.Context) {
@@ -113,12 +113,12 @@ r.POST("/users", func(c *gin.Context) {
 })
 ```
 
-## 开发
+## Development
 
-### 运行测试
+### Run Tests
 
 ```go
-// 可以添加测试文件
+// You can add test file
 // main_test.go
 package main
 
@@ -146,24 +146,24 @@ func TestPing(t *testing.T) {
 }
 ```
 
-运行测试：
+Run tests:
 ```bash
 go test
 ```
 
-## 部署
+## Deployment
 
-### 构建生产版本
+### Build Production Version
 
 ```bash
-# 构建优化版本
+# Build optimized version
 go build -ldflags="-s -w" -o gin-demo
 
-# 设置环境变量（生产模式）
+# Set environment variable (production mode)
 export GIN_MODE=release
 ```
 
-### Docker 部署
+### Docker Deployment
 
 ```dockerfile
 FROM golang:1.25-alpine AS builder
@@ -180,8 +180,8 @@ COPY --from=builder /app/gin-demo .
 CMD ["./gin-demo"]
 ```
 
-## 参考资源
+## References
 
-- [Gin 官方网站](https://gin-gonic.com/)
-- [Gin GitHub 仓库](https://github.com/gin-gonic/gin)
-- [Gin 文档](https://gin-gonic.com/docs/)
+- [Gin Official Website](https://gin-gonic.com/)
+- [Gin GitHub Repository](https://github.com/gin-gonic/gin)
+- [Gin Documentation](https://gin-gonic.com/docs/)
